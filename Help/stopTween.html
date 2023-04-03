@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>MovieClip.stopTween()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="JavaScript" src="_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td><td><a href="tween.html"><img src="_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="_sharedassets/shim.gif" width="10"  height="1"><a href="isTweening.html"><img src="_sharedassets/next.gif" alt="Next" border="0"></a></td>
+</tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<h1>MovieClip.stopTween()</h1>
+<h4><a name="251024"></a>Availability</h4>
+<p>Flash Player 6.</p>
+<h4><a name="251026"></a>Usage</h4>
+<pre>my_mc.stopTween(props)</pre>
+<h4><a name="1765408"></a>Parameters</h4>
+<p><code><em>props</em></code>&#32;A string or array of strings  indicating properties to be stopped <br>
+  if you will stop tweening of colorTransform (methods colotTo, brightnessTo, colorTransformTo) use &quot;_ct_&quot; as props parameter</p>
+<h4><a name="1765410"></a>Returns</h4>
+<p>Nothing.</p>
+<h4><a name="251032"></a>Description</h4>
+<p>method, stops tweening of  <i> &nbsp;props </i>, without passing <i> &nbsp;props </i>function stops all tweens in movieclip </p>
+<p>example:</p>
+<pre>my_mc.tween([&quot;_x&quot;,&quot;_width&quot;],[200,0],10);
+
+my_mc.onMouseDown = function(){
+ this.stopTween(&quot;_x&quot;);    // stops _x movement 
+ //this.stopTween(); 	 // stops all movemets 
+} </pre>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td><td><a href="tween.html"><img src="_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="_sharedassets/shim.gif" width="10"  height="1"><a href="isTweening.html"><img src="_sharedassets/next.gif" alt="Next" border="0"></a></td>
+</tr></table>
+</body>
+</html>
+
+
+
+
+
+
+

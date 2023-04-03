@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>MovieClip.tween()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="JavaScript" src="_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td><td><a href="index.html"><img src="_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="_sharedassets/shim.gif" width="10"  height="1"><a href="stopTween.html"><img src="_sharedassets/next.gif" alt="Next" border="0"></a></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<h1>MovieClip.tween()</h1>
+<h4><a name="251024"></a>Availability</h4>
+<p>Flash Player 6.</p>
+<h4><a name="251026"></a>Usage</h4>
+<pre>my_mc.tween(property, pEnd, seconds, animType, delay, callback, extra1, extra2)</pre>
+<h4><a name="1765408"></a>Parameters</h4>
+<p><em>property </em>	property(ies) to be tweened (string, array of strings)</p>
+<p>  <em>
+    
+pEnd  </em>end property value(s) (number, array of numbers) <em><br>
+<br>
+  seconds  </em>seconds to reach the end value, /duration of tween/ (number)  defaults to 2<em> <br>
+  <br>
+animType </em> animation equation type (string, function or object from custom easing tool)  defaults to &quot;easeOutExpo&quot;<br>
+<br>
+string as animType </p>
+<blockquote>
+  <p>You can use following strings as types of animation (easing equations by Robert Penner) </p>
+  <p>&quot;linear&quot;,<br>
+&quot;easeInQuad&quot;,&quot;easeOutQuad&quot;,&quot;easeInOutQuad&quot;,&quot;easeOutInQuad&quot;<br>
+&quot;easeInCubic&quot;,&quot;easeOutCubic&quot;,&quot;easeInOutCubic&quot;,&quot;easeOutInCubic&quot;<br>
+&quot;easeInQuart&quot;,&quot;easeOutQuart&quot;,&quot;easeInOutQuart&quot;,&quot;easeOutInQuart&quot;<br>
+&quot;easeInQuint&quot;,&quot;easeOutQuint&quot;,&quot;easeInOutQuint&quot;,&quot;easeOutInQuint&quot;<br>
+&quot;easeInSine&quot;,&quot;easeOutSine&quot;,&quot;easeInOutSine&quot;,&quot;easeOutInSine&quot;<br>
+&quot;easeInExpo&quot;,&quot;easeOutExpo&quot;,&quot;easeInOutExpo&quot;,&quot;easeOutInExpo&quot;<br>
+&quot;easeInCirc&quot;,&quot;easeOutCirc&quot;,&quot;easeInOutCirc&quot;,&quot;easeOutInCirc&quot;<br>
+&quot;easeInElastic&quot;,&quot;easeOutElastic&quot;,&quot;easeInOutElastic&quot;,&quot;easeOutInElastic&quot;<br>
+&quot;easeInBack&quot;,&quot;easeOutBack&quot;,&quot;easeInOutBack&quot;,&quot;easeOutInBack&quot;<br>
+&quot;easeInBounce&quot;,&quot;easeOutBounce&quot;,&quot;easeInOutBounce&quot;&quot;easeOutInBounce&quot;<br>
+  </p>
+  <p>example:<br>
+    my_mc.tween(&quot;_x&quot;,100,3,&quot;easeOutElastic&quot;)</p>
+</blockquote>
+<p>function as animType:</p>
+<blockquote>
+  <p>you can use <a href="http://timotheegroleau.com/Flash/experiments/easing_function_generator.htm" target="_blank">easing function generator</a> from Timothee Groleau to generate your function: e.g.:</p>
+  <pre>waveEasing = function(t,b,c,d){
+    // ... code from generator 
+}; 
+my_mc.tween(&quot;_x&quot;,100,3,waveEasing);
+   </pre>
+</blockquote>
+<p>object as animType: </p>
+<blockquote>
+  <p>you can use custom easing tool from  menu window-&gt;other panels -&gt;custom easing tool <br>
+    object must have properties pts (list of control point),ease (function)
+  e.g.:</p>
+  <pre>customEasing = {};
+// ... copy and paste here generated code
+my_mc.tween(&quot;_x&quot;,100,3,customEasing);
+
+</pre>
+  <p>*this easing is bit slower than previous two methods
+    </p>
+  </blockquote>
+<p><em>  delay </em> delay in seconds to start animation (number)  defaults to 0</p>
+<blockquote>
+  <p>this parameter allows you create cool sequential tweens:<br>
+    <br>
+    my_mc.('_x', 200,0.5);<br>
+    my_mc.('_x', 400,0.5,'easeoutcirc',0.5)<br>
+    my_mc.tween('_width', 300,1,'easeoutelastic',1)<em>;<br>
+    </em>my_mc.tween('_height', 300,1,'easeoutelastic',2);<em><br>
+    </em>my_mc.colorTo(0xFF0000,1,'easeinexpo',3);</p>
+</blockquote>
+<p><em><br>
+  </em><em>  callback </em>function to be called when finished (function or object with scope, func and args or string)<br>
+  <br>
+  function as callback</p>
+<blockquote>
+  <pre>function onEnd(){
+trace(&quot;onEnd&quot;);
+}
+my_mc.tween(&quot;_x&quot;,100,1,&quot;linear&quot;,0,onEnd);
+<br>// scope of function is my_mc._parent</pre>
+</blockquote>
+<p>object as callback</p>
+<blockquote>
+  <p>You can pass as callback  object with properties <br>
+    <br>
+    func - function to be called when tween is finished <br>
+    scope - scope of function (this in called function)<br>
+  args - array of arguments passed to function<br>
+  <br>
+  updfunc - reference to function to be called on every update<br>
+  updscope
+- scope of update function (this object) <br>
+updargs - array of arguments passed to update function<br>
+<br>
+startfunc - reference to function to be called on start of tween<br>
+startscope - scope of start function (this object) <br>
+startargs - array of arguments passed to start function</p>
+  <p>* internal mechanism is: func.apply(scope,args)<br>
+</p>
+<pre>// on _root
+game={};
+game.players = [&quot;john&quot;,&quot;steve&quot;];
+game.showScore = function(id, score){
+trace(&quot;(this==_root.game) is &quot;+(this==_root.game));	
+trace(this.players[id] + &quot; has &quot; + score + &quot; points&quot;);
+}
+
+// somewhere in nested movieclip
+var callback = {scope: _root.game, func: _root.game.showScore, args:[1,39]};
+my_mc.tween(&quot;_x&quot;,100,1,&quot;linear&quot;,0,callback);
+/* or in 1 line:
+my_mc.tween(&quot;_x&quot;,100,1,&quot;linear&quot;,0,{scope: _root.game, func: _root.game.showScore, args:[1,39]});
+*/
+
+//output after finishing tween:
+
+(this==_root.game) is true
+steve has 39 points
+</pre></blockquote>
+<p>string as callback </p>
+<blockquote>
+  <p>callbacks can be too defined as strings</p>
+  <p>my_mc.tween(&quot;_x&quot;,100,1,&quot;linear&quot;,0,'_root.gotoAndPlay(8)');<br>
+    <br>
+  it is very problematic determine type of primitive parameters(number, string, boolean), in this case is 8 string<br>
+  <br>
+  for save type of 
+  passed argument use references:</p>
+  <p>function callMe(my_obj, my_nr, my_bool) {<br>
+    trace(my_obj +&quot;&gt;&gt; typeof(my_obj) is &quot;+ typeof(my_obj));<br>
+    trace(my_nr +&quot;&gt;&gt; typeof(my_nr) is &quot;+ typeof(my_nr));<br>
+  trace(my_bool +&quot;&gt;&gt; typeof(my_bool) is &quot;+ typeof(my_bool));<br>
+  } </p>
+  <p>test_obj = {name: &quot;test&quot;, id: 10};<br>
+    test_bool = true;<br>
+    test_nr = 99;
+  </p>
+  <p>my_mc.tween(&quot;_x&quot;,100,1,&quot;linear&quot;,0,'_root.callMe(test_obj,test_nr,test_bool)');<br>
+    <br>
+     Do not add spaces between argumets<br>
+  </p>
+</blockquote>
+<p><em>extra1</em> optional animation parameter.<em> <br>
+    </em>means AMPLITUDE (a) when animType  *elastic<br>
+  means OVERSHOOT AMMOUNT (s) when animType  *back<em><br>
+  <br>
+  extra2 </em> optional animation parameter. <br>
+  means PERIOD (p) when animType = *elastic<br>
+</p>
+<h4><a name="1765410"></a>Returns</h4>
+<p>Nothing.</p>
+<h4>&nbsp;</h4>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td><td><a href="index.html"><img src="_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="_sharedassets/shim.gif" width="10"  height="1"><a href="stopTween.html"><img src="_sharedassets/next.gif" alt="Next" border="0"></a></td></tr></table>
+</body>
+</html>
+
+
+
+
+
+
+

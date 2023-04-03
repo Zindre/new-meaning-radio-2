@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>Basic ActionScript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="JavaScript">
+var version = navigator.appVersion;
+if (version.indexOf("Mac") != -1) {
+  document.write('<link rel=stylesheet href="help_mac.css" TYPE="text/css">');
+}
+else if (version.indexOf("Windows") != -1) {
+  document.write('<link rel=stylesheet href="help_pc.css" TYPE="text/css">');
+}
+else {
+  document.write('<link rel=stylesheet href="help.css" TYPE="text/css">');                         
+}
+</script>
+<style type="text/css">
+<!--
+body {
+	background-color: #EEEEE6;
+	margin: 0px;
+}
+
+table {
+	font-size: 100%;
+	margin: 0px;
+	border: 0px;
+	border-spacing: 0px;
+}
+
+th {
+	border: 0px;
+	padding: 0px 0px;
+}
+
+td {
+	white-space: nowrap;
+	border: 0px;
+	padding: 0px 0px;
+}
+
+table th, table td {
+	padding: 0px 0px;
+}
+
+a:link, a:visited, a:hover, a:visited:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+img {
+	margin: 0px;
+}
+-->
+</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#FF3300">
+    <td><img src="shim.gif" height="1" width="15"></td>
+    <td width="100%"><img src="Welcome_howdoi_banner.gif"></td>
+    <td><img src="Welcome_logo.gif"></td>
+    <td><img src="shim.gif" height="1" width="11"></td>
+  </tr>
+  <tr>
+    <td colspan="4"><img src="Welcome_border.gif" height="10" width="100%"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td><img src="shim.gif" height="1" width="15"></td>
+    <td width="100%"><b>Quick Start</b></td>
+    <td><img src="shim.gif" height="1" width="11"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="Welcome_border2.gif" width="100%" height="18"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/QuickTasks/01_Document.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create a new document</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/QuickTasks/02_Accessible.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create accessible Flash content</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/QuickTasks/03_Scripts.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Write scripts with ActionScript</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/QuickTasks/04_Application.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create an application</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td><img src="shim.gif" width="1" height="20"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><b>Basic Flash</b></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="Welcome_border2.gif" width="100%" height="18"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/05_Layers.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Work with layers</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/06_Layout.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Use layout tools</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/07_Draw.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Draw in Flash</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/08_Symbols.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create symbols and instances</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/09_Buttons.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Work with buttons</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/10_Text.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Add static, input, and dynamic text</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/11_AnimationTimeline.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create a Timeline animation</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicFlash/12_Presentation.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create a presentation with screens</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td><img src="shim.gif" width="1" height="20"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><b>Basic ActionScript</b></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="Welcome_border2.gif" width="100%" height="18"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicActionScript/13_Interactivity.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Add interactivity</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicActionScript/14_SimpleForm.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create a form</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="../HowDoI/BasicActionScript/15_ObjectsClasses.html"><img src="Welcome_page_icon.gif" width="20" height="20" align="absmiddle">Create objects and classes</a></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+

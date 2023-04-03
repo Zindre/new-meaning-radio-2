@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>tweenManager class</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="JavaScript" src="_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td><td><a href="rotateTo.html"><img src="_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="_sharedassets/shim.gif" width="10"  height="1"><a href="index.html"><img src="_sharedassets/next.gif" alt="Next" border="0"></a></td>
+</tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<h1>tweenManager class </h1>
+<p>Main class of MovieClip Tweening prototypes, prototypes only parses arguments (and does not store any variables to MovieClip) to instance of class named <strong>$tweenManager </strong></p>
+<h4><a name="251024"></a>Properties</h4>
+<p><em>autoStop</em> - boolean, default to false, determines if running tweens may be automatically stoped . This property is useful when  you dont like to write stopTween() before tween() method call, stopTween(properties) is called automatically<br>
+  example:
+<br>
+$tweenManager.autoStop = true; </p>
+<p><em>broadcastEvents </em>- boolean, default to false, determines if tweening MovieClip may broadcast events (based on AsBroadcaster), useful for 1 - n relations:</p>
+<p>onTweenStart<br>
+  onTweenUpdate<br>
+onTweenEnd</p>
+<p>example:<br>
+  $tweenManager.broadcastEvents = true; <br>
+  my_obj = {};<br>
+my_obj.onTweenStart = function(){<br>
+trace('my_obj onTweenStart');<br>
+} <br>
+my_obj.onTweenUpdate = function(){<br>
+trace('my_obj onTweenUpdate');<br>
+} <br>
+my_obj.onTweenEnd = function(){<br>
+trace('my_obj onTweenEnd');<br>
+} </p>
+<p>my_second_obj = {};</p>
+<p>my_second_obj.onTweenEnd = function(){<br>
+trace('my_second_obj onTweenEnd');<br>
+} </p>
+<p>my_mc.onTweenEnd = function(){<br>
+  trace('my_mc onTweenEnd')<br>
+  } </p>
+<p>my_mc.addListener(my_obj);<br>
+my_mc.addListener(my_second_obj);<br>
+my_mc.addListener(my_mc);</p>
+<p>my_mc.tween('_x',200);</p>
+<p><em>updateInterval</em>: numeric value of calling update function. <br>
+  0 is default - onEnterFrame; values higher than 0 are controlled with setInterval 
+</p>
+<p><strong>Methods:</strong></p>
+<p><em>pauseAll() </em>: pauses all runing and delayed tweens</p>
+<p><em>unPauseAll() </em>unpauses all runing and delayed tweens</p>
+<p><em>stopAll() </em>: stops all running and delayed tweens </p>
+<p><strong>Tips:</strong></p>
+<p>I some cases, when you upgrade from older version, and you having trouble to running tweens, use following technique:</p>
+<p>use (trace($tweenManager)), if you see [object Object] or [AS2 tweenManager [version nr]], and version nr is lower you have installed, that means  older version of tweenManager is loaded. You must delete the precompiled class file (*.aso) in directory:<br>
+WinXP:<br>
+C:\Documents and Settings\[username]\Local Settings\Application Data\Macromedia\Flash MX 2004\[language]\Configuration\Classes\aso\
+zigo.tweenManager.aso<br>
+</p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td><td><a href="rotateTo.html"><img src="_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="_sharedassets/shim.gif" width="10"  height="1"><a href="index.html"><img src="_sharedassets/next.gif" alt="Next" border="0"></a></td>
+</tr></table>
+</body>
+</html>
+
+
+
+
+
+
+

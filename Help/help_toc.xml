@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book title="Movieclip Tweening Prototypes" directory="MovieclipTweening" language="en" version="1.1.6">
+	<level1 href="index.html" name="Instructions" />
+	<level1 href="tween.html" name=".tween()" />
+	<level1 href="stopTween.html" name=".stopTween()" />
+	<level1 href="isTweening.html" name=".isTweening()" />
+	<level1 href="getTweens.html" name=".getTweens()" />
+	<level1 href="lockTween.html" name=".lockTween()" />
+	<level1 href="unlockTween.html" name=".unlockTween()" />
+	<level1 href="isTweenLocked.html" name=".isTweenLocked()" />
+	<level1 href="alphaTo.html" name=".alphaTo()" />
+	<level1 href="brightnessTo.html" name=".brightnessTo()" />
+	<level1 href="brightOffsetTo.html" name=".brightOffsetTo()" />
+	<level1 href="colorTo.html" name=".colorTo()" />
+	<level1 href="colorTransformTo.html" name=".colorTransformTo()" />
+	<level1 href="contrastTo.html" name=".contrastTo()" />
+	<level1 href="frameTo.html" name=".frameTo()" />
+	<level1 href="scaleTo.html" name=".scaleTo()" />
+	<level1 href="slideTo.html" name=".slideTo()" />
+	<level1 href="rotateTo.html" name=".rotateTo()" />
+	<level1 href="tweenManager.html" name="tweenManager class" />
+	<level1 href="customEasing.html" name="Custom Easing Tool" />
+</book>	
